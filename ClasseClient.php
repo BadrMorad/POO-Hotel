@@ -3,6 +3,7 @@ class Client {
     private $nom;
     private $prenom;
     private $dateNaissance;
+    private $reservation;
 
     public function __construct($nom, $prenom, $dateNaissance) {
         $this->nom = $nom;

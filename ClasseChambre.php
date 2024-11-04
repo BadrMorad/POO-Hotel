@@ -4,6 +4,7 @@ class chambre {
     private $prix;
     private $type;
     private $wifi;
+    private $reservation;
 
     public function __construct($numero, $prix, $type, $wifi) {
         $this->numero = $numero;
