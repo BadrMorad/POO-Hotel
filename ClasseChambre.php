@@ -24,6 +24,7 @@ class chambre {
 public function haswifi() {
     return $this->wifi;
 }
+ // Méthode magique __toString() pour afficher une représentation en chaîne de caractères de la chambre
 public function __toString() {
     return "Chambre" . $this->numero . " Type " . $this->type . " Prix " . $this->prix . " wifi " . ($this->wifi);
 } 

@@ -4,6 +4,8 @@ class Hotel {
    private $chambres = [];
    private $reservations = [];
    private $titulaire; // Ajout de la propriété privée titulaire
+
+   // Constructeur de la classe, appelé lors de la création d'un objet de type Hotel
    public function __construct($nom, $adresse, $codePostal, $ville) {
        $this->nom = $nom;
        $this->adresse = $adresse;
@@ -60,6 +62,7 @@ class Hotel {
    public function ajouterReservation($reservation) {
        $this->reservations[] = $reservation;
    }
+   // Méthode pour afficher les informations de l'hôtel sous forme de chaîne de caractère
    public function toString() {
     return "Hotel" . $this->nom . "Adresse" . $this->adresse . $this->codePostal . " " . $this->ville ."Nombre de chmabres" . count($this->chambres);
    }

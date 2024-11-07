@@ -30,6 +30,7 @@ public function setDateNaissance($dateNaissance) {
 }
 public function __toString() {
     return $this->getNomComplet() ." ". $this->dateNaissance  ;
+    
 }
 
  }
