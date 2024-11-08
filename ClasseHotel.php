@@ -2,7 +2,7 @@
 class Hotel {
    private $nom, $adresse, $codePostal, $ville;
    private $chambres = [];
-   private $reservations = [];
+//    private $reservations = [];
    private $titulaire; // Ajout de la propriété privée titulaire
 
    // Constructeur de la classe, appelé lors de la création d'un objet de type Hotel
@@ -11,6 +11,8 @@ class Hotel {
        $this->adresse = $adresse;
        $this->codePostal = $codePostal;
        $this->ville = $ville;
+       $this->chambres = [];
+
    }
    // Getter pour récupérer le titulaire
    public function getTitulaire() {
@@ -63,8 +65,12 @@ class Hotel {
        $this->reservations[] = $reservation;
    }
    // Méthode pour afficher les informations de l'hôtel sous forme de chaîne de caractère
-   public function toString() {
-    return "Hotel" . $this->nom . "Adresse" . $this->adresse . $this->codePostal . " " . $this->ville ."Nombre de chmabres" . count($this->chambres);
-   }
+   public function __toString() {
+    return $this->nom . "<br>" .
+           $this->adresse . ", " . $this->codePostal . " " . $this->ville . "<br>" .
+           "Nombre de chambres : " . count($this->chambres) . "<br>" .
+           "Nombre de chambres réservées : " . count($this->reservations) . "<br>" .
+           "Nombre de chambres dispo : " . (count($this->chambres) - count($this->reservations));
+}
 }
 ?>

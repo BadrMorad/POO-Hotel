@@ -3,12 +3,13 @@ class Client {
     private $nom;
     private $prenom;
     private $dateNaissance;
-    private $reservation;
+    private $reservations = [];
 
     public function __construct($nom, $prenom, $dateNaissance) {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->dateNaissance = $dateNaissance;
+        
     }
     public function getNom() {
         return $this->nom;
@@ -31,6 +32,12 @@ public function setDateNaissance($dateNaissance) {
 public function __toString() {
     return $this->getNomComplet() ." ". $this->dateNaissance  ;
     
+}
+public function ajouterReservation($reservation) {
+$this->reservations [] = $reservation;
+}
+public function getReservations () {
+    return $this->reservation;
 }
 
  }
