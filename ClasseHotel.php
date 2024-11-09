@@ -2,7 +2,7 @@
 class Hotel {
    private $nom, $adresse, $codePostal, $ville;
    private $chambres = [];
-//    private $reservations = [];
+ private $reservations = [];
    private $titulaire; // Ajout de la propriété privée titulaire
 
    // Constructeur de la classe, appelé lors de la création d'un objet de type Hotel
