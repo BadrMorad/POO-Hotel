@@ -5,42 +5,37 @@ class Reservation {
     private $dateDebut;
     private $dateFin;
 
-
     public function __construct($titulaire, $chambre, $dateDebut, $dateFin) {
         $this->titulaire = $titulaire;
         $this->chambre = $chambre;
         $this->dateDebut = $dateDebut;
         $this->dateFin = $dateFin;
     }
+
     public function getTitulaire() {
-        return $this->Titulaire;
+        return $this->titulaire;
     }
-    public function getchambre() {
+
+    public function getChambre() {
         return $this->chambre;
     }
-    public function  getdateDebut() {
+
+    public function getDateDebut() {
         return $this->dateDebut;
     }
-public function getdateFin() {
-    return $this->dateFin;
-}
 
-public function setTitulaire($titulaire) {
-$this ->titulaire =$titulaire;
-}
-public function setChambre($Chambre) {
-    return $this->$Chambre;
-}
-public function setDateDebut($dateDebut) {
-    return $this->$dateDebut;
-}
-public function setDateFin($dateFin) {
-    return $this->$dateFin;
-}
-public function __toString() {
-return "Réservation pour " . $this->client;
-}
-}
+    public function getDateFin() {
+        return $this->dateFin;
+    }
 
+    public function getTotal() {
+        $days = (strtotime($this->dateFin) - strtotime($this->dateDebut)) / (60 * 60 * 24);
+        return $this->chambre->getPrix() * $days;
+    }
 
+    public function __toString() {
+        return $this->chambre->getHotel()->getNom() . " - Chambre " . $this->chambre->getNumero() . " (" . $this->chambre->getType() . ") - du " . $this->dateDebut . " au " . $this->dateFin . " - Total : " . $this->getTotal() . " €<br>";
+    }
+}
 ?>
+

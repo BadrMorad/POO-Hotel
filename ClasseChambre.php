@@ -4,7 +4,6 @@ class Chambre {
     private $prix;
     private $type;
     private $wifi;
-    private $reservations = [];
     private $hotel;
 
     public function __construct($numero, $prix, $type, $wifi, $hotel) {
@@ -12,25 +11,33 @@ class Chambre {
         $this->prix = $prix;
         $this->type = $type;
         $this->wifi = $wifi;
-        $this->reservations;
-        $this->hotel;
+        $this->hotel = $hotel;
     }
-    
+
     public function getNumero() {
         return $this->numero;
     }
+
     public function getPrix() {
         return $this->prix;
     }
+
     public function getType() {
         return $this->type;
     }
-public function haswifi() {
-    return $this->wifi;
-}
- // Méthode magique __toString() pour afficher une représentation en chaîne de caractères de la chambre
-public function __toString() {
-    return "Chambre" . $this->numero . " Type " . $this->type . " Prix " . $this->prix . " wifi " . ($this->wifi) . "$this->hotel";
-} 
+
+    public function haswifi() {
+        return $this->wifi;
+    }
+
+    public function getHotel() {
+        return $this->hotel;
+    }
+
+    public function __toString() {
+        return "Chambre " . $this->numero . " - Type: " . $this->type . " - Prix: " . $this->prix . "€ - Wifi: " . ($this->wifi ? "Oui" : "Non") . "<br>";
+    }
 }
 ?>
+
+
