@@ -1,0 +1,24 @@
+.totalreservations {
+  width: auto; /* Permet à la largeur de s'ajuster au contenu */
+  padding: 10px;
+  background-color: #0073e6; /* Couleur de fond bleue */
+  color: white; /* Texte en blanc */
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.container {
+  padding: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.uk-background-primary {
+  width: 100%; /* Utilise toute la largeur disponible */
+  padding: 10px;
+  text-align: center;
+  background-color: #0073e6; /* Fond bleu pour cette section */
+  color: white; /* Texte blanc */
+  border-radius: 5px; /* Bords arrondis */
+}
